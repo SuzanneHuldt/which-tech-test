@@ -2,7 +2,7 @@ require './lib/grid_counter.rb'
 describe GridCounter do
   describe '#get direction' do
     it 'returns the current direction' do
-      expect(subject.get_facing).to eq ('n')
+      expect(subject.get_facing).to eq ('north')
     end
   end
   describe '#minus' do
@@ -51,6 +51,13 @@ describe GridCounter do
       counter = GridCounter.new
       expect {counter.go_west}.to change {counter.location[0]}.by(-1)
 
+    end
+  end
+
+  describe '#move' do
+    it 'moves in the provided direction' do
+      counter = GridCounter.new
+      expect(counter.move('right')).to eq([1,0])
     end
   end
 
