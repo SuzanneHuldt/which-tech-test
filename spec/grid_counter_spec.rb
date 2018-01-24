@@ -59,6 +59,10 @@ describe GridCounter do
       counter = GridCounter.new
       expect(counter.move('right')).to eq([1,0])
     end
+    it 'moves in the provided direction' do
+      counter = GridCounter.new
+      expect(counter.move('forward')).to eq([0,1])
+    end
   end
 
 end
